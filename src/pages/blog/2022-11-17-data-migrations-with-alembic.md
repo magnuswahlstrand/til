@@ -55,6 +55,6 @@ def upgrade():
     
 ```
 
-Done!
+Done
 
 # ❤️‍🔥
