@@ -1,0 +1,8 @@
+---
+import Card from "../components/Card";
+const { posts } = Astro.props;
+---
+<table>
+    {posts.filter(({ frontmatter }) => !frontmatter.draft).map((post) =>
+    <Card title={post.frontmatter.title} datetime={post.frontmatter.datetime} url={post.url}/>)}
+</table>

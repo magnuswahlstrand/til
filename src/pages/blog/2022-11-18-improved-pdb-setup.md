@@ -51,7 +51,7 @@ class Config(pdb.DefaultConfig):
 
 Now `sticky` is on by default (only pdb++), and we can json_dump things.
 ```
-(Pdb++) obj={"xx":'hej', "name":"Magnus", "a":"b"}
+(Pdb++) obj={"name":"Magnus"}
 (Pdb++) json_dump(obj)
 Content dumped to: dump.json
 ```

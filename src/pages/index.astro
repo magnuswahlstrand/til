@@ -1,8 +1,9 @@
 ---
+import Layout from "../layouts/Main.astro";
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import PostsList from '../components/PostsList.astro';
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
 const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
@@ -10,45 +11,14 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 );
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION}/>
-        </head>
-<body>
-<Header title={SITE_TITLE}/>
-    <main>
-        <p>
-            <span style="font-weight: bold">🧑‍🚀 Hello, Person!</span> Here is a collection of lessons I've learnt from my
-            day job as a programmer.
-        </p>
+<Layout>
+    <p>
+        <span style="font-weight: bold">🧑‍🚀 Hello, Person!</span> Here is a collection of lessons I've learnt from my
+        day job as a programmer.
+    </p>
 
-        <section>
-            <h3>Collection</h3>
-            <table>
-                {
-
-
-                posts.filter(({ frontmatter }) => !frontmatter.draft).map((post) => (
-                <tr>
-                    <td>
-                        <time datetime={post.frontmatter.datetime}>
-                            {new Date(post.frontmatter.datetime).toLocaleDateString([], {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric",
-                            })}
-                        </time>
-                    </td>
-                    <td>
-                        <a href={post.url}>{post.frontmatter.title}</a>
-                    </td>
-                </tr>
-                ))
-                }
-            </table>
-        </section>
-    </main>
-    <Footer/>
-</body>
-</html>
+    <section>
+        <h3 class="text-xl font-bold pb-2 pt-5">Collection</h3>
+        <PostsList posts={posts}>
+    </section>
+</Layout>
