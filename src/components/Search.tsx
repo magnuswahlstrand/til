@@ -1,8 +1,6 @@
 import Fuse from "fuse.js";
+import Card from "./Card";
 import { useEffect, useRef, useState } from "react";
-// import Card from "../components/Card";
-// import slugify from "@utils/slugify";
-// import type { Frontmatter } from "src/types";
 
 type SearchItem = {
   title: string;
@@ -70,6 +68,21 @@ export default function SearchBar({ searchList }: Props) {
     }
   }, [inputVal]);
 
+
+  var c;
+  if(inputVal.length > 0 && searchResults) {
+    c = searchResults.map(({ item, refIndex }) => (
+        <Card title={item.frontmatter.title} datetime={item.frontmatter.datetime} url={item.url}/>
+    ))
+  } else {
+    // console.log(searchList.map(({ item, refIndex }) => <Card title={item.title} datetime={item.frontmatter.datetime} url={item.url}/>)
+    // c = <div></div>
+    c = searchList.map(( item ) => (
+        // console.log(item)
+        <Card title={item.frontmatter.title} datetime={item.frontmatter.datetime} url={item.url}/>
+    ))
+  }
+
   return (
     <>
       <label className="relative block">
@@ -105,20 +118,9 @@ export default function SearchBar({ searchList }: Props) {
         </div>
       )}
 
-      <ul>
-        {searchResults &&
-          searchResults.map(({ item, refIndex }) => (
-              <div class={"font-bold"}>
-                {JSON.stringify(item)}
-                <a href={""}></a>
-              </div>
-            // <Card
-            //   post={item.frontmatter}
-            //   // href={`/posts/${slugify(item.frontmatter)}`}
-            //   key={`${refIndex}-${slugify(item.frontmatter)}`}
-            // />
-          ))}
-      </ul>
+      <table>
+        {c}
+      </table>
     </>
   );
 }
