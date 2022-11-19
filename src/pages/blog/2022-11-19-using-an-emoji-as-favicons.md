@@ -2,7 +2,7 @@
 layout: "../../layouts/BlogPost.astro"
 title: "Using an emoji as favoicon"
 datetime: "2022-11-19"
-tags: [emoji, web]
+tags: [emoji, web, svg]
 ---
 
 One of the hardest thing in web development is creating a favicon. 

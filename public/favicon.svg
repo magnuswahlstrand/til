@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg">
-  <text y="16" font-size="16">🤔</text>
-  <text y="28" x="16" font-size="16">💡</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+  <rect rx="10" ry="10" width="32" height="32" fill="white"/>
+  <text x="1" y="17" font-size="14">🤔</text>
+  <text y="27" x="14" font-size="14">💡</text>
 </svg>
