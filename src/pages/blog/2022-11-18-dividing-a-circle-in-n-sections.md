@@ -33,6 +33,44 @@ Here are two more examples, with three and seven sections.
 
 **N=7**
 
-Here is my 
+Here is my code (also in the [p5js editor](https://editor.p5js.org/magnuswahlstrand-daffy/sketches/S9lQsSq8z)):
+```javascript
+const width = 400
+const height = 400
+const cx = width/2
+const cy = height/2
+const cDiameter = 300
+const nShapes = 5
+
+var colors = [
+"#9b5fe0",
+"#16a4d8",
+"#60dbe8",
+"#8bd346",
+"#efdf48",
+"#f9a52c",
+"#d64e12",
+]
+
+function setup() {
+  createCanvas(width, height);
+}
+
+function draw() {
+  background(220);
+  
+  var step = cDiameter/nShapes
+  for (let i = 0; i < nShapes; i++) {
+    var offset = i * step/2 
+    // width of section
+    var sd = cDiameter -i*step
+    
+    fill(colors[i])
+    arc(cx - offset, cy, sd, sd, PI, 0);
+    fill(colors[nShapes-i-1])
+    arc(cx + offset, cy, sd, sd, 0, PI);
+  }
+}
+```
 
 # 🔵
