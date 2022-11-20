@@ -6,8 +6,8 @@ export interface Props {
 
 export default function Card({title, url, datetime}: Props) {
     return (
-        <tr>
-            <td>
+        <tr className="text-sm md:text-base">
+            <td className="whitespace-nowrap align-top">
                 <time dateTime={datetime}>
                     {new Date(datetime).toLocaleDateString([], {
                         year: "numeric",

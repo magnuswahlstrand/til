@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: "created_at and updated_at with SQLAlchemy"
+title: "created and updated_at with SQLAlchemy"
 datetime: "2022-11-14"
 tags: [python, sqlalchemy, postgres]
 ---
