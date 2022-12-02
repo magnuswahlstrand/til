@@ -3,55 +3,39 @@ layout: "../../layouts/BlogPost.astro"
 title: "Intercepting Kubernetes traffic with telepresence"
 datetime: "2022-11-30"
 tags: [kubernetes, telepresence]
-draft: true
 ---
 
-I've just started playing with [Rust](https://www.rust-lang.org/) by going through the examples
-in [Rust by example](https://doc.rust-lang.org/rust-by-example).
+Today I learned how to use **telepresence** ([telepresence.io](https://telepresence.io/)) to intercept traffic to a service in a kubernetes
+cluster.
 
-Today I learned some things about debug printouts in Rust.
+First up, we need to connect to our cluster
 
-1. Print debug information using `println`, uses the `{:?}` template, as opposed to the regular `{}` template.
-
-```rust
-println!("{:?} months in a year.", 12);
+```
+telepresence connect
 ```
 
-2. To be debug printable, a type needs to have the `fmt::Debug trait`. We can add that trait by deriving it.
-
-```rust
-struct UnPrintable(i32);
-
-#[derive(Debug)]
-struct DebugPrintable(i32);
+Then we can intercept traffic coming to a specific deployment, and send it to our local machine. 
+```
+> telepresence intercept user-service --port 8000:http
 ```
 
-3. All types in the standard library has the `fmt::Debug trait` and can be debug printed.
-
-4. We can pretty print a debug printable value by using `{:#?}` instead of `{:?}`
-
-```rust
-fn main() {
-    println!("{:?}", DebugPrintable(32));
-    println!("");
-    println!("{:#?}", DebugPrintable(32));
-}
 ```
-
-Output:
-
-```rust
-DebugPrintable(32)
-
-DebugPrintable(
-32,
-)
+Using Deployment user-service
+intercepted
+   Intercept name         : user-service
+   State                  : ACTIVE
+   Workload kind          : Deployment
+   Intercepting           : HTTP requests with headers
+         'x-telepresence-intercept-id: 34e3daf0-8773-4dd5-b605-5edf841fe131:user-service'
+   ...
 ```
+Now all requests with with this header (`x-telepresence-intercept-id: 34e3daf0-8773-4dd5-b605-5edf841fe131:user-service`) will be intercepted, and routed to `:8000` on our local machine. The header is auto-generated and added by default, if not logged in.
 
-5. There is no equivalent of `#[derive(Debug)]` for the `fmt::Display trait` used with `{}`. This has to be implemented
-   manually
+### Other options:
+* `--http-header` - We can specify own header on the format `<NAME>=<VALUE>`. If we write`all`, we intercept all traffic, and with `auto` we auto-generated header, as above.  
+* `--http-path-equal` - Only intercept traffic with paths equal to the flag value. E.g. `/docs`
+* `--http-path-prefix` -  Only intercept traffic with paths starting with the value. E.g. `/users/<USER_ID>` matches `/users/<USER_ID>/profile` and `/users/<USER_ID>/email` 
+* `--http-path-regexp` - Intercept anything matching the regex. 
 
-More about debug printouts
-here: [Rust by Example: Debug](https://doc.rust-lang.org/rust-by-example/hello/print/print_debug.html).
-
-# 🦀
+# 📞
+--http-header=name=magnus
