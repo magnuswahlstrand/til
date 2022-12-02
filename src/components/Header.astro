@@ -3,8 +3,8 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../config';
 ---
 
-<header>
-	<h2>
+<header class="mb-8">
+	<h2 class="my-3">
 		{SITE_TITLE}
 	</h2>
 	<nav>
@@ -14,11 +14,3 @@ import { SITE_TITLE } from '../config';
 		<HeaderLink href="https://github.com/magnuswahlstrand" target="_blank">GitHub</HeaderLink>
 	</nav>
 </header>
-<style>
-	header {
-		margin: 0em 0 2em;
-	}
-	h2 {
-		margin: 0.5em 0;
-	}
-</style>

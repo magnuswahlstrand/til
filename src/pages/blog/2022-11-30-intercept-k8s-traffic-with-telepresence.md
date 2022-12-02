@@ -38,4 +38,3 @@ Now all requests with with this header (`x-telepresence-intercept-id: 34e3daf0-8
 * `--http-path-regexp` - Intercept anything matching the regex. 
 
 # 📞
---http-header=name=magnus

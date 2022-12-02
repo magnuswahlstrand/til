@@ -8,8 +8,9 @@ tags: [python, debug, pdb]
 Today I learned ([source Stack overflow](https://stackoverflow.com/a/6980836)) that you can start a python in debug mode without adding a `breakpoint()` to the code.
 
 ### Using pdb
+```
 > python -m pdb your_script.py
-
+```
 ```bash
 > /some-repo/pdb-tutorial/main.py(1)<module>()
 -> from dicegame.runner import GameRunner
@@ -26,7 +27,9 @@ pip install pdbpp
 ```
 
 Then the same command as before
+```
 > python -m pdb your_script.py
+```
 
 ```bash
 [2] > /some-repo/pdb-tutorial/main.py(1)<module>()
