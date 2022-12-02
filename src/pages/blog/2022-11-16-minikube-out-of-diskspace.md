@@ -12,7 +12,7 @@ Today I had to troubleshoot why some containers didn't start in my local **minik
 ```
 
 ## Solution
-I learnt how to ssh into **minikube**:
+I learned how to ssh into **minikube**:
 ```
 minikube ssh
 ```

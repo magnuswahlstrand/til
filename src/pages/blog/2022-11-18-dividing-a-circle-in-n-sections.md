@@ -11,25 +11,25 @@ The video above describes how to do it. A quick summary below
 
 1. First we draw half circles 
 
-![half circles](/img/circle-1.png)
+![half circles](/til/img/circle-1.png)
 
 2. Then we flip and mirror them. I added a slight distance between the two parts.
 
-![two half circles](/img/circle-2.png)
+![two half circles](/til/img/circle-2.png)
 
 3. Next we color them, and remove the distance.
 
-![colored sections](/img/circle-3.png)
+![colored sections](/til/img/circle-3.png)
 
 Voila! Looks great doesn't it?
 
 Here are two more examples, with three and seven sections.
 
-![3 sections](/img/circle-4.png)
+![3 sections](/til/img/circle-4.png)
 
 **N=3**
 
-![7 sections](/img/circle-5.png)
+![7 sections](/til/img/circle-5.png)
 
 **N=7**
 

@@ -5,7 +5,7 @@ datetime: "2022-11-25"
 tags: [python, fastapi]
 ---
 
-Today I learnt that it is easy to add background tasks to an endpoint in [FastAPI](https://fastapi.tiangolo.com/). They are functions that will be run **after** a response has been served. 
+Today I learned that it is easy to add background tasks to an endpoint in [FastAPI](https://fastapi.tiangolo.com/). They are functions that will be run **after** a response has been served. 
 
 ```python 
 from fastapi import app, BackgroundTasks
