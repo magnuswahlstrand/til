@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/BlogPost.astro"
 title: "Delete kubernetes pods based on name with wildcard"
-datetime: "2022-01-03"
+datetime: "2023-01-03"
 tags: [kubernetes, kubectl]
 ---
 
