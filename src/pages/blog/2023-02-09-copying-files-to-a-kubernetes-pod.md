@@ -10,7 +10,7 @@ Today I learned how to copy files to a Kubernetes pod using `kubectl cp`.
 First you need to find the name of pod
 
 ```
-POD_NAME=$(kubectl get pods | grep my-service)
+POD_NAME=$(kubectl get pods  | grep my-service | cut -f1 -d' ')
 ```
 
 If I want to copy a file called `my-script.py` to `/app/`
