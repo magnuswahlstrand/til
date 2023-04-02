@@ -29,7 +29,7 @@ Without the cert, `curl` can't verify the legitimacy, and throws an error.
 1) download the root ca certificate from the website https://badssl.com/certs/ca-untrusted-root.crt
 2) Create a dockerfile with the following content
 
-```Dockerfile
+```
 FROM ubuntu:latest
 RUN apt update && apt install -y curl
 
