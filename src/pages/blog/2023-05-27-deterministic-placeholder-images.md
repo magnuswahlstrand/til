@@ -23,9 +23,11 @@ For example:
 This mean you can do stuff like this for prototypes:
 
 ```tsx
-<div key={i} className="border-2 border-black">
-    <img src={`https://robohash.org/${cat}`} alt="cat" />
-</div>
+{robotNames.map((robotName, i) => (
+    <div key={i} className="border-2 border-black">
+        <img src={`https://robohash.org/${robotName}`} alt="robot" />
+    </div>
+))}
 ```
 
 # 🤖
