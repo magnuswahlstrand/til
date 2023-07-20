@@ -15,7 +15,7 @@ Here are the four predefined animations:
 
 <div class="grid grid-cols-12 gap-x-4 font-bold w-72 items-center">
     <div class="animate-spin px-1 w-6 h-6">🌀</div>
-    <div class="col-span-11 bg-pink-100">animate-spin</div>
+    <div class="col-span-11">animate-spin</div>
     <div class="animate-bounce w-6 h-6 mx-1">🔵</div>
     <div class="col-span-11">animate-bounce</div>
     <div class="relative flex h-3 w-3 mx-1.5">
@@ -29,7 +29,7 @@ Here are the four predefined animations:
     <div  class="col-span-11">animate-pulse</div>
 </div>
 
-Looks great! As with all classes, you can [Customize the animations](https://tailwindcss.com/docs/animation#customizing-your-theme) and also define [Arbitrary values](https://tailwindcss.com/docs/grid-template-columns#arbitrary-values). For example
+Looks great! As with all classes, you can [customize the animations](https://tailwindcss.com/docs/animation#customizing-your-theme) or define [arbitrary values](https://tailwindcss.com/docs/grid-template-columns#arbitrary-values). For example
 ```html
 <div class="animate-[bounce_2s_ease-in-out]">
   <!-- ... -->
