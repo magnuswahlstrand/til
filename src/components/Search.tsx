@@ -30,10 +30,11 @@ export default function SearchBar({ searchList }: Props) {
   };
 
   const fuse = new Fuse(searchList, {
-    keys: ["title", "description", "headings"],
+    keys: ["title", "description", "headings", "tags"],
     includeMatches: true,
+    includeScore: true,
     minMatchCharLength: 2,
-    threshold: 0.5,
+    threshold: 0.4,
   });
 
   useEffect(() => {
@@ -71,15 +72,16 @@ export default function SearchBar({ searchList }: Props) {
 
   var c;
   if(inputVal.length > 0 && searchResults) {
+    // console.log(searchResults.map(( item ) => item.matches[0]).map(( item ) => [item.key, item.value, item]))
+    // console.log(searchResults.map(( item ) => item.score))
     c = searchResults.map(({ item, refIndex }) => (
-        <Card title={item.frontmatter.title} datetime={item.frontmatter.datetime} url={item.url}/>
+        <Card key={item.frontmatter.url} title={item.frontmatter.title} datetime={item.frontmatter.datetime} url={item.url}/>
     ))
   } else {
-    // console.log(searchList.map(({ item, refIndex }) => <Card title={item.title} datetime={item.frontmatter.datetime} url={item.url}/>)
     // c = <div></div>
     c = searchList.map(( item ) => (
         // console.log(item)
-        <Card title={item.frontmatter.title} datetime={item.frontmatter.datetime} url={item.url}/>
+        <Card key={item.frontmatter.url} title={item.frontmatter.title} datetime={item.frontmatter.datetime} url={item.url}/>
     ))
   }
 
@@ -87,11 +89,13 @@ export default function SearchBar({ searchList }: Props) {
     <>
       <label className="relative block">
         <span className="sr-only">Search</span>
-        <span className="absolute inset-y-0 left-0 flex items-center pl-2 opacity-75">
-          <svg xmlns="http://www.w3.org/2000/svg">
-            <path d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"></path>
+        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+          <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+               xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
           </svg>
-        </span>
+        </div>
         <input
           className="placeholder:italic placeholder:text-opacity-75 py-3 pl-10 pr-3
         block bg-skin-fill w-full rounded
@@ -107,9 +111,10 @@ export default function SearchBar({ searchList }: Props) {
           ref={inputRef}
         />
       </label>
+      <h3 className="text-xl font-bold pb-2 pt-5">Collection2</h3>
 
       {inputVal.length > 1 && (
-        <div className="mt-8">
+        <div className="mt-8 mb-2">
           Found {searchResults?.length}
           {searchResults?.length && searchResults?.length > 1
             ? " results"

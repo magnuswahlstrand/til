@@ -2,7 +2,7 @@
 layout: "../../layouts/BlogPost.astro"
 title: "Debug printing in Rust"
 datetime: "2022-11-27"
-tags: [python, fastapi]
+tags: [rust, debugging]
 ---
 
 I've just started playing with [Rust](https://www.rust-lang.org/) by going through the examples

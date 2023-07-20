@@ -9,7 +9,7 @@ Today I learnt how to split fields in a SQL query. Let's say I have a table of u
 to instead have (best effort) first name, last name and email.
 Using `split_part` I can do this:
 
-```SQL
+```sql
 SELECT split_part(fullname, ' ', 1) AS first_name, split_part(fullname, ' ', 2) AS last_name, email
 FROM users;
 ```
@@ -25,7 +25,7 @@ Barnus     | Foostrand  | bar@mail.com
 ## Bonus
 We can also store this content to a local file using `psql`:
 
-```SQL
+```sql
 \copy (
   SELECT split_part(fullname, ' ', 1) AS first_name, 
          split_part(fullname, ' ', 2) AS last_name, 

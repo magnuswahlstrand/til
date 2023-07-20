@@ -16,10 +16,11 @@ const searchList = posts
   .map(post => ({
     title: post.frontmatter.title,
     description: post.frontmatter.description,
+    tags: post.frontmatter.tags,
     headings: post.getHeadings().map(h => h.text),
     frontmatter: post.frontmatter,
     url: post.url,
-  }));
+  })).reverse();
 ---
 
 <Layout>
