@@ -111,7 +111,7 @@ export default function SearchBar({ searchList }: Props) {
           ref={inputRef}
         />
       </label>
-      <h3 className="text-xl font-bold pb-2 pt-5">Collection2</h3>
+      <h3 className="text-xl font-bold pb-2 pt-5">Collection</h3>
 
       {inputVal.length > 1 && (
         <div className="mt-8 mb-2">
