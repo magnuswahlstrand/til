@@ -71,7 +71,7 @@ export default function SearchBar({ searchList }: Props) {
 
 
   var c;
-  if(inputVal.length > 0 && searchResults) {
+  if(inputVal.length > 1 && searchResults) {
     // console.log(searchResults.map(( item ) => item.matches[0]).map(( item ) => [item.key, item.value, item]))
     // console.log(searchResults.map(( item ) => item.score))
     c = searchResults.map(({ item, refIndex }) => (
