@@ -2,7 +2,7 @@
 layout: "../../layouts/BlogPost.astro"
 title: Rename fields in MongoDB
 datetime: "2023-08-22"
-tags: [ mongodb, db ]
+tags: [ mongodb, database ]
 ---
 
 Today I learned that you can rename fields in MongoDB using the `$rename` operator. For example:

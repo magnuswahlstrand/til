@@ -2,7 +2,7 @@
 layout: "../../layouts/BlogPost.astro"
 title: Null or empty with MongoDB
 datetime: "2023-09-04"
-tags: [ mongodb, db ]
+tags: [ mongodb, database ]
 ---
 
 A common problem I run into when working with MongoDB with document fields that can be either null or empty. E.g.
