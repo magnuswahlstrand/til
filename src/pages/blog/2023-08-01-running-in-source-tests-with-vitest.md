@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: "React's most useful props helper: ComponentProps"
-datetime: "2023-07-31"
+title: "Running in source tests with vitest"
+datetime: "2023-08-01"
 tags: [ typescript, vitest, testing ]
 ---
 
