@@ -50,7 +50,7 @@ DETAIL:  Key (email)=(magnus@mail.com) already exists.
 
 5. Inspect the table
 
-```SQL
+```sql
 > SELECT * FROM users;
 
 user_id

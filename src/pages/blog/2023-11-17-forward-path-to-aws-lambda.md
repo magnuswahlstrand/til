@@ -15,7 +15,7 @@ func Handler(ctx context.Context, req events.APIGatewayProxyRequest) (events.API
 ```
 
 I had the API gateway route all requests to a single Lambda function, and then Fiber would handle the routing. This configuration routes everything (except OPTIONS) to the Lambda function.
-```text
+```
 ANY /{proxy+} --> functions/lambda/main.go
 ```
 

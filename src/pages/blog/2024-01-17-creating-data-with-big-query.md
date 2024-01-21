@@ -2,7 +2,7 @@
 layout: "../../layouts/BlogPost.astro"
 title: Generating data with UNNEST and ARRAY_AGG in BigQuery
 datetime: "2024-01-17"
-tags: [ bigquery, sql ]
+tags: [ bigquery, sql, database ]
 ---
 
 Today I started working with [BigQuery](https://cloud.google.com/bigquery) again. Here are a few tips and tricks I
@@ -85,10 +85,10 @@ SELECT [1,2,3,4,5]
 
 And UNNEST it
     
-    ```sql
-    SELECT *
-    FROM UNNEST([1,2,3,4,5])
-    ```
+```sql
+SELECT *
+FROM UNNEST([1,2,3,4,5])
+```
 
 #### Output
 
