@@ -31,7 +31,7 @@ SELECT * FROM orders WHERE id = :'order_id'
 
 ----------
 
-This can be combined with the `\i` command to include the script in another script, as described [here](/blog/2024-03-14-access-the-shell-from-psql.md). 
+This can be combined with the `\i` command to include the script in another script, as described [here](/til/blog/2024-03-14-access-the-shell-from-psql). 
 
 ```sql
 \set order_id '70a36b0d-f29d-4b06-a4b6-934736430c5f'

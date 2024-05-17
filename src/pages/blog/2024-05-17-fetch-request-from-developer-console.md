@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: "Access the shell from PSQL"
+title: "Making HTTP requests from developer console"
 datetime: "2024-05-17"
 tags: [ javascript, productivity, development ]
 ---

@@ -7,7 +7,7 @@ export interface Props {
 export default function Card({title, url, datetime}: Props) {
     const date = new Date(datetime)
     let day = date.getDate().toString()
-    let month = date.toLocaleString('default', {month: 'short'});
+    let month = date.toLocaleString('en-US', {month: 'short'});
     let year = date.getFullYear();
 
     const padding = day.length == 1 && <span className="text-white">0</span>

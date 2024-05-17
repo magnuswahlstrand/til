@@ -15,7 +15,7 @@ Today I learned that you can access the shell from PSQL by using the `\!` comman
 /Users/magnus/
 ```
 
-\! 
+## \\! 
 
 We can also execute SQL scripts from the shell using `\i` to `include them: 
 
