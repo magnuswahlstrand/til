@@ -11,7 +11,7 @@ been exploring the `aws` cli, and how to be use it for scripting.
 Let's start by just listing load balancers
 
 ```
-aws elbv2 --profile tvm-developer@dev1 describe-load-balancers --no-cli-pager
+aws elbv2 --profile developer@dev1 describe-load-balancers --no-cli-pager
 {
     "LoadBalancers": [
         {
@@ -25,7 +25,7 @@ aws elbv2 --profile tvm-developer@dev1 describe-load-balancers --no-cli-pager
 Pretty good, but too much information. I just want the DNS name. We can use `--query` for that:
 
 ```
-aws elbv2 --profile tvm-developer@dev1 describe-load-balancers --no-cli-pager --query 'LoadBalancers[].DNSName'
+aws elbv2 --profile developer@dev1 describe-load-balancers --no-cli-pager --query 'LoadBalancers[].DNSName'
 [
     "lb1.eu-west-1.elb.amazonaws.com",
     "lb2.eu-west-1.elb.amazonaws.com",
@@ -40,7 +40,7 @@ For some reason, this returns a tab separated list, but we can replace the tabs 
 into fzf:
 
 ```
-aws elbv2 --profile tvm-developer@dev1 describe-load-balancers --no-cli-pager --query 'LoadBalancers[].DNSName' --output text | sed 's/\t/\n/g' | fzf
+aws elbv2 --profile developer@dev1 describe-load-balancers --no-cli-pager --query 'LoadBalancers[].DNSName' --output text | sed 's/\t/\n/g' | fzf
 lb1.eu-west-1.elb.amazonaws.com
 lb2.eu-west-1.elb.amazonaws.com
 lb3.eu-west-1.elb.amazonaws.com
@@ -55,5 +55,5 @@ That's step 1 of our long journey to do something useful with the `aws` cli 😬
 We can add additional filtering inside the `--query` flag. For example, we can filter out only load balancers that start with `lb1`, as follows:
 
 ```
-aws elbv2 --profile tvm-developer@dev1 describe-load-balancers --no-cli-pager --query "LoadBalancers[?starts_with(DNSName, 'internal')].DNSName"
+aws elbv2 --profile developer@dev1 describe-load-balancers --no-cli-pager --query "LoadBalancers[?starts_with(DNSName, 'internal')].DNSName"
 ```
