@@ -14,12 +14,12 @@ export default function Card({title, url, datetime}: Props) {
 
     return (
         <tr className="text-sm md:text-base">
-            <td className="whitespace-nowrap align-top font-mono">
+            <td className="whitespace-nowrap align-top font-mono pr-2 box-border">
                 <time dateTime={datetime}>
                     {day}{padding} {month} {year}
                 </time>
             </td>
-            <td>
+            <td className="w-full">
                 <a href={url}>{title}</a>
             </td>
         </tr>
