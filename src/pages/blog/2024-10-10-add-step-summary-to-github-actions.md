@@ -29,7 +29,7 @@ The result is found under the **Summary** section on the Github action as follow
 
 -------
 
-We can use this together with [bash command grouping](2024-10-10-redirect-multiple-outputs-in-bash) to only redirect once:
+We can use this together with [bash command grouping](/til/blog/2024-10-10-redirect-multiple-outputs-in-bash) to only redirect once:
 
 ```
 - name: Step summary

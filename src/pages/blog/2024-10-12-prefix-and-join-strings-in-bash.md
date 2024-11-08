@@ -15,13 +15,13 @@ pear
 
 into
 
-```
+```bash
 --filter=peach --filter=apple --filter=pear
 ```
 
 Turns out we can easily do this with `sed` and `tr`. If the input is in file `input.txt`, we can do
 
-```
+```bash
 cat input.txt | sed 's/.*/--filter=&/' | tr '\n' ' '
 ```
 
@@ -33,7 +33,7 @@ Sed explained:
 Finally we replace newlines with spaces.
 
 Result: 
-```
+```bash
 --filter=peach --filter=apple --filter=pear
 ```
 

@@ -29,7 +29,7 @@ faker.random.arrayElements(['free', 'basic', 'premium'], 2)
 #### Pick a random number of elements from an array with a minimum of 1 and maximum of 3
 
 ```javascript 
-faker.random.arrayElements(['free', 'basic', 'premium'], faker.random.number({min: 1, max: 3}))
+faker.random.arrayElements(['free', 'basic', 'premium'], faker.number.int({min: 1, max: 3}))
 ```
 
 Done!
