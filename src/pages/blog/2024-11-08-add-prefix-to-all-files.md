@@ -8,10 +8,9 @@ tags: [ bash, scripting ]
 Today I learned how to add a prefix to all files in a directory.
 
 ```bash
-for f in *; do mv "$f" "prefix-$f" done
+for f in *; do mv "$f" "prefix-$f"; done
 ```
 
 That's it!
 
 # 🚀
-```
