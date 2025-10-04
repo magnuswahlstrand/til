@@ -19,7 +19,7 @@ Today I learned how to debug Github action outputs!
 ```
 
 **Example output:**
-```text
+```
 {
   random-number: 1,
   service-name: FOO-SERVICE,

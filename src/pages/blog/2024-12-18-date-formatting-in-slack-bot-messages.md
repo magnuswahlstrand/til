@@ -9,12 +9,12 @@ I have set up a Slack app at work that send messages when we do deployments from
 
 Format
 
-```text
+```
 <!date^timestamp^token_string^optional_link|fallback_text>
 ```
 
 For example this:
-```text
+```
 <!date^1392734382^Posted {date_num} {time_secs}|Posted 2014-02-18 6:39:42 AM PST>
 ```
 

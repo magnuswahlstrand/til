@@ -5,7 +5,7 @@ datetime: "2025-10-04"
 tags: [ markdown, astro ]
 ---
 
-Today I learned that you can add alerts (a.k.a. callouts) to markdown rendering:
+Today I learned (from an excellent [blog post](https://vojtechstruhar.com/blog/028-gfm-callouts-in-astro/) by Vojtěch Struhár) that you can add alerts (a.k.a. callouts) to markdown rendering:
 > [!IMPORTANT]
 > Such as this one!
 
