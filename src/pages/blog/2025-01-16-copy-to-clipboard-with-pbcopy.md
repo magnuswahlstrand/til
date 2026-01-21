@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/BlogPost.astro"
 title: "Copy query results to clipboard in psql with pbcopy"
-datetime: "2025-01-16"
+datetime: "2026-01-16"
 tags: [ psql, postgres, macos ]
 ---
 
