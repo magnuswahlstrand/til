@@ -10,8 +10,8 @@ Today I needed to update my personal access token (PAT) for git. E.g.
 ```
 > git remote -v
 
-origin	https://<PAT>@github.com/TV4/user-backend-services.git (fetch)
-origin	https://<PAT>@github.com/TV4/user-backend-services.git (push)
+origin	https://<PAT>@github.com/org/services.git (fetch)
+origin	https://<PAT>@github.com/org/services.git (push)
 ```
 
 To script this, I need to extract only the middle part. The problem is that the whitespace is a mix of tabs and spaces. 
@@ -20,7 +20,7 @@ Today I learned that `cut` has an option (`-w`) to cut on either!
 ```
 > git remote -v | cut -w -f2 | head -n1
 
-https://<PAT>@github.com/TV4/user-backend-services.git
+https://<PAT>@github.com/org/services.git
 ```
 
 ### Replacing the PAT
