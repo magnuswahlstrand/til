@@ -16,9 +16,3 @@ You can drag that thumbnail directly into the Claude CLI to attach the image to 
 3. Drag the thumbnail into the Claude CLI terminal window
 
 That's it — the image is attached and Claude can see it.
-
-## Tips
-
-- The thumbnail disappears after a few seconds, so drag it quickly
-- `Cmd+Shift+4` then `Space` lets you screenshot a specific window instead of a selection
-- `Cmd+Shift+3` takes a full-screen screenshot (also draggable)
