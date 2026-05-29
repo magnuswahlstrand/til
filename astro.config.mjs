@@ -16,5 +16,6 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), react(), tailwind()],
   markdown: {
     remarkPlugins: [remarkGithubAlerts],
+    extendDefaultPlugins: true,
   },
 });

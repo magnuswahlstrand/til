@@ -8,7 +8,7 @@ tags: [ mac, screenshot ]
 ## Screenshots
 
 | Shortcut | What it does |
-|---|---|
+|----------|--------------|
 | `Cmd+Shift+3` | Full screen |
 | `Cmd+Shift+4` | Select an area |
 | `Cmd+Shift+4` → `Space` | Click to capture a specific window |
